@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "NYT Loves Google",
+    "version": "0.1.0",
+    "description": "Convert links on the NYT into Google searches for the specific article.",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.nytimes.com/",
+                "http://nytimes.com/*",
+                "http://*.nytimes.com/*",
+                "https://www.nytimes.com/",
+                "https://nytimes.com/*",
+                "https://*.nytimes.com/*"
+            ],
+            "js": [
+                "js/parseuri.js",
+                "js/logwrapper.js",
+                "js/jquery-1.9.1.min.js",
+                "js/nytgoogle.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "img/logo_16x16.png",
+        "48": "img/logo_48x48.png",
+        "128": "img/logo_48x48.png"
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'",
+    "permissions": [
+        "webNavigation",
+        "tabs"
+    ]
+}
